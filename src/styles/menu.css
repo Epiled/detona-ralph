@@ -1,0 +1,24 @@
+.menu {
+  display: flex;
+  justify-content: space-around;
+  background: #000;
+  border-bottom: .25rem solid #ffff00;
+  color: #fff;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.menu__status h2 {
+  color: red;
+  margin-bottom: 1rem;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+}
+
+.player__imagem {
+  max-width: 6rem;
+  height: auto;
+}

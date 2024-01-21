@@ -1,0 +1,31 @@
+.corpo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: url(../assets/imgs/wall.png);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.panel__row {
+  display: flex;
+}
+
+.square {
+  width: 20rem;
+  height: 20rem;
+  background: #1aeaa5;
+  border: .1rem solid #000;
+}
+
+.square[data-enemy] {
+  background-image: url(../assets/imgs/ralph.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
