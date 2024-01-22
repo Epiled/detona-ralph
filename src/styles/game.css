@@ -1,0 +1,64 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.game__wrapper {
+  max-width: 60rem;
+  width: 100%;
+  align-self: center;
+  margin-top: 3rem;
+  padding: .5rem;
+  display: flex;
+  flex: 1;
+  color: #fff;
+  background-color: rgb(234, 35, 0);
+  border: 1rem dashed rgb(255, 147, 6);
+}
+
+.game__info {
+  background-color: black;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.game__title {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.game__entrada {
+  position: relative;
+  width: 35rem;
+  border-bottom: .2rem solid white;
+}
+
+.game__ipt {
+  background: none;
+  border: 0;
+  color: #f6c500;
+  font-size: 2rem;
+  font-family: inherit;
+  outline: 0;
+  display: inline;
+  padding: 0;
+}
+
+.game__btn {
+  background: none;
+  font-family: inherit;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.game__btn:hover {
+  color: #f6c500;
+}

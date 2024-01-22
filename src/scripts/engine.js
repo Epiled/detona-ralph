@@ -1,26 +1,34 @@
+import toggles from "./menuGame.js";
+
 const state = {
   view: {
     timeLeft: document.querySelector('[data-time]'),
     score: document.querySelector('[data-score]'),
     squares: document.querySelectorAll('[data-square]'),
     enemy: document.querySelector('[data-enemy]'),
+    start: document.querySelector('[data-start]'),
   },
   values: {
     gameVelocity: 1000,
     hitPosition: null,
     results: 0,
     curretTime: 60,
+    pause: true,
   },
   actions: {
-    countDownTimerId: setInterval(countDown, 1000),
-    timeId: setInterval(randomSquare, 1000),
+    countDownTimerId: null,
+    timeId: null,
+    pause: pauseGame,
+    resumeGame: resumeGame,
   }
 }
 
 function resetTimePosition() {
-  randomSquare();
   clearInterval(state.actions.timeId);
-  state.actions.timeId = setInterval(randomSquare, 1000);
+  setTimeout(() => {
+    randomSquare();
+    state.actions.timeId = setInterval(randomSquare, 1000);
+  }, 1000);
 }
 
 function countDown() {
@@ -31,7 +39,7 @@ function countDown() {
     clearInterval(state.actions.countDownTimerId);
     clearInterval(state.actions.timeId);
     console.log("Game Over!");
-    alert("Game Over! O seu resultado foi: " + state.values.results);
+   // alert("Game Over! O seu resultado foi: " + state.values.results);
   }
 }
 
@@ -44,6 +52,7 @@ function playSound(audioname) {
 function randomSquare() {
   state.view.squares.forEach(square => {
     square.removeAttribute('data-enemy');
+    square.classList.remove('hit');
   });
 
   let randomNumber = Math.floor(Math.random() * 9);
@@ -60,6 +69,9 @@ function addListenerHitBox() {
         state.values.results++;
         state.view.score.textContent = state.values.results;
         state.values.hitPosition = null;
+        console.log(
+        )
+        square.classList.add('hit');
         playSound('hit');
         resetTimePosition();
       }
@@ -67,9 +79,31 @@ function addListenerHitBox() {
   });
 }
 
+function startGame() {
+  state.actions.countDownTimerId = setInterval(countDown, 1000);
+  state.actions.timeId = setInterval(randomSquare, 1000);
+  state.view.start.setAttribute('disabled', true);
+}
+
+function pauseGame() {
+  clearInterval(state.actions.countDownTimerId);
+  clearInterval(state.actions.timeId);
+}
+
+function resumeGame() {
+  startGame()
+}
 
 function init() {
+  toggles.actions.iniciar();
+
+  // Adicione event listeners aos botões
+  state.view.start.addEventListener('click', startGame);
+// document.getElementById('pauseButton').addEventListener('click', pauseGame);
+
   addListenerHitBox();
 }
 
 init();
+
+export default state;

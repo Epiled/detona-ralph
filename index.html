@@ -34,27 +34,102 @@
 
   <main class="corpo">
 
-    <div class="panel">
-      <div class="panel__row">
-        <div data-square class="square enemy" id="1"></div>
-        <div data-square class="square" id="2"></div>
-        <div data-square class="square" id="3"></div>
+    <div class="coluna">
+      <div class="coluna__wrapper">
+        <img class="coluna__image" src="src/assets/imgs/logo.png" alt="" width="1634" height="1346">
+        <button class="coluna__btn" data-start>
+          Iniciar
+        </button>
+        <button class="coluna__btn" data-btn-toggle="configuracao">
+          Configuração
+        </button>
+        <button class="coluna__btn" data-btn-toggle="ranking">
+          Ranking
+        </button>
       </div>
-      <div class="panel__row">
-        <div data-square class="square" id="4"></div>
-        <div data-square class="square" id="5"></div>
-        <div data-square class="square" id="6"></div>
+    </div>
+
+    <div class="game">
+      <div class="panel">
+        <div class="panel__row">
+          <div data-square class="square" id="1"></div>
+          <div data-square class="square" id="2"></div>
+          <div data-square class="square" id="3"></div>
+        </div>
+        <div class="panel__row">
+          <div data-square class="square" id="4"></div>
+          <div data-square class="square" id="5"></div>
+          <div data-square class="square" id="6"></div>
+        </div>
+        <div class="panel__row">
+          <div data-square class="square" id="7"></div>
+          <div data-square class="square" id="8"></div>
+          <div data-square class="square" id="9"></div>
+        </div>
       </div>
-      <div class="panel__row">
-        <div data-square class="square" id="7"></div>
-        <div data-square class="square" id="8"></div>
-        <div data-square class="square" id="9"></div>
+
+      <div class="game__wrapper">
+        <div class="game__info">
+          <h2 class="game__title">Infome seu apelido</h2>
+          <div class="game__entrada">
+            <input class="game__ipt" type="text" name="" id="">
+          </div>
+          <button class="game__btn">
+            Salvar Pontuação
+          </button>
+        </div>
       </div>
+
+      <aside class="ranking" data-toggle="ranking">
+        <div class="ranking__wrapper">
+          <div class="ranking__cabecalho">
+            <span>Nome</span>
+            <span>Pontuação</span>
+          </div>
+
+          <ol class="ranking__info">
+            <li>Fix-It Felix: <span>45</span></li>
+            <li>Vanellope von Schweetz: <span>55</span></li>
+            <li>Wreck-It Ralph: <span>35</span></li>
+            <li>Calhoun: <span>40</span></li>
+            <li>King Candy: <span>25</span></li>
+            <li>Sergeant Tamora Jean Calhoun: <span>50</span></li>
+            <li>Yesss: <span>30</span></li>
+            <li>Shank: <span>20</span></li>
+            <li>KnowsMore: <span>15</span></li>
+            <li>Felícia: <span>5</span></li>
+          </ol>
+
+          <button class="ranking__btn" data-btn-toggle="ranking">
+            Fechar Ranking
+          </button>
+        </div>
+      </aside>
+
+      <aside class="configuracao" data-toggle="configuracao">
+        <div class="configuracao__wrapper">
+
+          <label for="musica">
+            Música
+            <input type="range" name="musica" id="musica">
+          </label>
+
+          <label for="efeitos">
+            Efeitos
+            <input type="range" name="efeitos" id="efeitos">
+          </label>
+
+
+          <button class="configuracao__btn" data-btn-toggle="configuracao">
+            Salvar Configuração
+          </button>
+        </div>
+      </aside>
     </div>
 
   </main>
 
-  <script defer src="src/scripts/engine.js"></script>
+  <script type="module" defer src="src/scripts/engine.js"></script>
 </body>
 
 </html>

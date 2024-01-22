@@ -1,0 +1,63 @@
+.ranking {
+  display: flex;
+  align-self: center;
+  flex: 1;
+  color: #fff;
+  background-color: rgb(234, 35, 0);
+  border: 1rem dashed rgb(255, 147, 6);
+  padding: .5rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.ranking.active {
+  display: block;
+}
+
+.ranking__wrapper {
+  background-color: black;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.ranking__cabecalho {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.ranking__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.ranking__info li {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.ranking__btn {
+  background: none;
+  font-family: inherit;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.ranking__btn:hover {
+  color: #f6c500;
+}

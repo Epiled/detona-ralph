@@ -1,2 +1,10 @@
+
+@import url(_variaveis.css);
 @import url(menu.css);
+@import url(coluna.css);
 @import url(corpo.css);
+@import url(game.css);
+@import url(ranking.css);
+@import url(configuracao.css);
+
+

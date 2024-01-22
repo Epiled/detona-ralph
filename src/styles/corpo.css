@@ -1,15 +1,16 @@
 .corpo {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   flex: 1;
   background: url(../assets/imgs/wall.png);
+  padding: 2rem;
 }
 
 .panel {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1rem;
+  /* flex: 1; */
 }
 
 .panel__row {
@@ -21,6 +22,7 @@
   height: 20rem;
   background: #1aeaa5;
   border: .1rem solid #000;
+  position: relative;
 }
 
 .square[data-enemy] {
@@ -28,4 +30,16 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
+}
+
+.square[data-enemy].hit::after {
+  background-image: url(../assets/imgs/hit.png);
+  background-position: center;
+  background-size: cover;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
