@@ -1,6 +1,6 @@
 # 🎮🧱 Detona Ralph
 
-Projeto do bootcamp Potêncial tech Ifood - Desenvolvimento de Jogos, patrocidado pelo IFood.
+Projeto do bootcamp Potencial tech Ifood - Desenvolvimento de Jogos, patrocidado pelo IFood.
 
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
