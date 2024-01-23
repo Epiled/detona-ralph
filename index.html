@@ -28,7 +28,7 @@
     </div>
     <div class="menu__status player" data-menu-player>
       <img class="player__imagem" src="src/assets/imgs/player.png" width="101" height="87" alt="">
-      <p data-life>x3</p>
+      <span data-life>x3</span>
     </div>
   </header>
 
@@ -87,7 +87,7 @@
             <span>Pontuação</span>
           </div>
 
-          <ol class="ranking__info">
+          <ol class="ranking__info" data-ranking>
             <li>Fix-It Felix: <span>45</span></li>
             <li>Vanellope von Schweetz: <span>55</span></li>
             <li>Wreck-It Ralph: <span>35</span></li>
@@ -130,6 +130,7 @@
   </main>
 
   <script type="module" defer src="src/scripts/engine.js"></script>
+  <script type="module" src="src/scripts/ranking.js"></script>
 </body>
 
 </html>

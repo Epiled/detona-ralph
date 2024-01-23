@@ -6,6 +6,7 @@ const state = {
     score: document.querySelector('[data-score]'),
     squares: document.querySelectorAll('[data-square]'),
     enemy: document.querySelector('[data-enemy]'),
+    life: document.querySelector('[data-life]'),
     start: document.querySelector('[data-start]'),
   },
   values: {
@@ -38,6 +39,7 @@ function countDown() {
   if (state.values.curretTime <= 0) {
     clearInterval(state.actions.countDownTimerId);
     clearInterval(state.actions.timeId);
+
     console.log("Game Over!");
    // alert("Game Over! O seu resultado foi: " + state.values.results);
   }
@@ -83,11 +85,13 @@ function startGame() {
   state.actions.countDownTimerId = setInterval(countDown, 1000);
   state.actions.timeId = setInterval(randomSquare, 1000);
   state.view.start.setAttribute('disabled', true);
+  state.values.pause = false;
 }
 
 function pauseGame() {
   clearInterval(state.actions.countDownTimerId);
   clearInterval(state.actions.timeId);
+  state.values.pause = true;
 }
 
 function resumeGame() {

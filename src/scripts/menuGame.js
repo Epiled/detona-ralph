@@ -6,6 +6,7 @@ const toggles = {
     btnToggle: document.querySelectorAll('[data-btn-toggle]'),
   },
   values: {
+    exibindoMenu: false,
     ativo: null,
   },
   actions: {
@@ -25,13 +26,18 @@ function handleToggle(tipo) {
       container.classList.remove('active');
     })
     selecionado.classList.toggle('active');
-    state.actions.pause();
+    toggles.values.exibindoMenu = true;
   } else {
     selecionado.classList.toggle('active');
-    state.actions.resumeGame();
+    toggles.values.exibindoMenu = false;
   }
 
   toggles.values.ativo = selecionado;
+  if (selecionado.classList.contains("active")) {
+    state.actions.pause();
+  } else if (!selecionado.classList.contains("active") && state.values.pause) {
+    state.actions.resumeGame();
+  }
 }
 
 function init() {
