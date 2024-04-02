@@ -7,6 +7,8 @@ Projeto do bootcamp Potencial tech Ifood - Desenvolvimento de Jogos, patrocidado
 | :sparkles: Nome        | **Detona Ralph**
 | :label: Tecnologias | html, css, js
 
+![rafh](https://github.com/Epiled/detona-ralph/assets/55258483/f7b030af-a2c6-4785-8ec7-183cba07902e)
+
 <h2 id="detalhes-do-projeto"> 📃 Detalhes do projeto </h2>
 
 Jogo de acerta o Rapth, desenvolvido utilizando tecnologias web, como html, css e javascript.
@@ -26,11 +28,17 @@ Jogo de acerta o Rapth, desenvolvido utilizando tecnologias web, como html, css 
 
 <!--ts-->
    * [Detalhes do projeto](#detalhes-do-projeto)
+   * [Demonstração](#demonstracao)
    * [Instalação](#instalacao)
    * [Como usar](#como-usar)
    * [Tecnologias](#tecnologias)
    * [Autor](#autor)
 <!--te-->
+
+<h2 id="demonstracao"> 👀 Demonstração </h2>
+
+https://github.com/Epiled/detona-ralph/assets/55258483/251b9056-57d8-417f-9de1-d43a6afd5816
+
 
 <h2 id="instalacao"> ⚙ Instalação </h2>
 
@@ -42,7 +50,7 @@ Jogo de acerta o Rapth, desenvolvido utilizando tecnologias web, como html, css 
 <h2 id="como-usar"> 👩‍🏫 Como usar </h2>
 
 ```
-1. Abra o arquivo index.html no navegador
+1. Abra o arquivo index.html no navegador (Utilizar Live Server ou semelhante)
 ```
 
 <h2 id="tecnologias"> 🛠 Tecnologias </h2>
