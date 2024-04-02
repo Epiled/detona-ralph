@@ -10,49 +10,64 @@
   align-self: center;
   margin-top: 3rem;
   padding: .5rem;
-  display: flex;
   flex: 1;
-  color: #fff;
-  background-color: rgb(234, 35, 0);
-  border: 1rem dashed rgb(255, 147, 6);
+  color: var(--lighter);
+  background-color: var(--color-secondary);
+  border: 1rem dashed var(--color-main);
+  display: none;
+}
+
+.game__wrapper.active {
+  display: flex;
 }
 
 .game__info {
-  background-color: black;
+  background-color: var(--darker);
   padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   flex: 1;
+  gap: 2rem;
 }
 
 .game__title {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   text-align: center;
+  line-height: 2.5rem;
 }
+
+@media screen and (min-width: 768px) {
+  .game__title {
+    font-size: 2.5rem;
+  }
+}
+
 
 .game__entrada {
   position: relative;
-  width: 35rem;
-  border-bottom: .2rem solid white;
+  width: 100%;
+  max-width: 35rem;
+  border-bottom: .2rem solid var(--lighter);
 }
 
 .game__ipt {
   background: none;
   border: 0;
-  color: #f6c500;
+  color: var(--color-main-hover);
   font-size: 2rem;
   font-family: inherit;
   outline: 0;
-  display: inline;
   padding: 0;
+  display: inline-block;
+  width: 100%;
 }
 
 .game__btn {
   background: none;
   font-family: inherit;
-  color: #fff;
+  color: var(--lighter);
   border: 0;
   cursor: pointer;
   padding: 1rem 0;
@@ -60,5 +75,5 @@
 }
 
 .game__btn:hover {
-  color: #f6c500;
+  color: var(--color-main-hover);
 }

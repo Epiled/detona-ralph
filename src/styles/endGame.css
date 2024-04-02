@@ -1,4 +1,4 @@
-.configuracao {
+.endGame {
   align-self: center;
   flex: 1;
   font-size: 1.5rem;
@@ -12,36 +12,30 @@
   display: none;
 }
 
-.configuracao.active {
+.endGame.active {
   display: block;
 }
 
-.configuracao__wrapper {
+.endGame__wrapper {
   background-color: var(--darker);
   padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  flex: 1;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-.configuracao__ipt {
-  accent-color: var(--color-main);
-}
-
-.configuracao__btn {
+.endGame__btn {
   background: none;
   font-family: inherit;
   color: var(--lighter);
   border: 0;
   cursor: pointer;
   padding: 1rem 0;
-  margin-top: 2rem;
   font-size: 1.25rem;
 }
 
-.configuracao__btn:hover {
+.endGame__btn:hover {
   color: var(--color-main-hover);
 }

@@ -1,6 +1,6 @@
 import state from "./engine.js";
 
-const toggles = {
+const menu = {
   view: {
     containers: document.querySelectorAll('[data-toggle]'),
     btnToggle: document.querySelectorAll('[data-btn-toggle]'),
@@ -8,45 +8,67 @@ const toggles = {
   values: {
     exibindoMenu: false,
     ativo: null,
+    menusFechados: true,
   },
   actions: {
-    iniciar: init
+    iniciar: init,
+    checkMenus: checkStateMenus,
   }
 }
 
-function handleToggle(tipo) {
-  const tipoSelecionado = tipo.dataset.btnToggle;
-
-  const selecionado = Array.from(toggles.view.containers).find((element) =>
-    element.dataset.toggle === tipoSelecionado
-  );
-
-  if (selecionado != toggles.values.ativo) {
-    toggles.view.containers.forEach(container => {
+// Verifica e Exibi o menu ativo
+function handleMenuAtivo(selecionado) {
+  if (selecionado != menu.values.ativo) {
+    menu.view.containers.forEach(container => {
       container.classList.remove('active');
     })
     selecionado.classList.toggle('active');
-    toggles.values.exibindoMenu = true;
+    menu.values.exibindoMenu = true;
   } else {
     selecionado.classList.toggle('active');
-    toggles.values.exibindoMenu = false;
-  }
-
-  toggles.values.ativo = selecionado;
-  if (selecionado.classList.contains("active")) {
-    state.actions.pause();
-  } else if (!selecionado.classList.contains("active") && state.values.pause) {
-    state.actions.resumeGame();
+    menu.values.exibindoMenu = false;
   }
 }
 
+// Determina se o jogo deve resumir ou não
+function handleResumeGame(selecionado) {
+  if (selecionado.classList.contains("active")) {
+    state.actions.pause();
+  } else if (!selecionado.classList.contains("active") && state.values.gameIniciado) {
+    state.actions.resumeGame();
+  } 
+}
+
+// Adquiri os elemntos para verificações
+function handleToggle(tipo) {
+  const tipoSelecionado = tipo.dataset.btnToggle;
+
+  const selecionado = Array.from(menu.view.containers).find((element) =>
+    element.dataset.toggle === tipoSelecionado
+  );
+
+  selecionado.dataset.menuOpen == 'false' ? selecionado.dataset.menuOpen = 'true' : selecionado.dataset.menuOpen = 'false'
+
+  handleMenuAtivo(selecionado);
+  menu.values.ativo = selecionado;
+  handleResumeGame(selecionado)
+}
+
+function checkStateMenus() {
+  const listaConvertida = Array.from(menu.view.containers)
+  const estadosMenus = listaConvertida.some(item => item.dataset.menuOpen === 'true');
+  menu.values.menusFechados = !estadosMenus;
+}
+
+// Prepara os menus
 function init() {
-  toggles.view.btnToggle.forEach(btn => {
+  menu.view.btnToggle.forEach(btn => {
     btn.addEventListener('click', () => {
       state.actions.pause();
       handleToggle(btn);
+      checkStateMenus();
     })
   })
 }
 
-export default toggles;
+export default menu;

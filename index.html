@@ -1,136 +1,181 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detona Ralph - Game</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detona Ralph - Game</title>
+    <link
+      rel="shortcut icon"
+      href="src/assets/imgs/favicon.jpg"
+      type="image/jpg"
+    />
 
-  <link rel="shortcut icon" href="src/assets/imgs/favicon.jpg" type="image/jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/reset.css" />
+    <link rel="stylesheet" href="src/styles/main.css" />
+  </head>
 
-  <link rel="stylesheet" href="src/styles/reset.css">
-  <link rel="stylesheet" href="src/styles/main.css">
-</head>
-
-<body>
-  <header class="menu">
-    <div class="menu__status" data-menu-time>
-      <h2>Time Left</h2>
-      <p data-time>0</p>
-    </div>
-    <div class="menu__status" data-menu-score>
-      <h2>Your Score</h2>
-      <p data-score>0</p>
-    </div>
-    <div class="menu__status player" data-menu-player>
-      <img class="player__imagem" src="src/assets/imgs/player.png" width="101" height="87" alt="">
-      <span data-life>x3</span>
-    </div>
-  </header>
-
-  <main class="corpo">
-
-    <div class="coluna">
-      <div class="coluna__wrapper">
-        <img class="coluna__image" src="src/assets/imgs/logo.png" alt="" width="1634" height="1346">
-        <button class="coluna__btn" data-start>
-          Iniciar
-        </button>
-        <button class="coluna__btn" data-btn-toggle="configuracao">
-          Configuração
-        </button>
-        <button class="coluna__btn" data-btn-toggle="ranking">
-          Ranking
-        </button>
+  <body>
+    <!-- Menu Superior com status do Game -->
+    <header class="menu">
+      <div class="menu__status" data-menu-time>
+        <h2>Time Left</h2>
+        <p data-time>0</p>
       </div>
-    </div>
-
-    <div class="game">
-      <div class="panel">
-        <div class="panel__row">
-          <div data-square class="square" id="1"></div>
-          <div data-square class="square" id="2"></div>
-          <div data-square class="square" id="3"></div>
-        </div>
-        <div class="panel__row">
-          <div data-square class="square" id="4"></div>
-          <div data-square class="square" id="5"></div>
-          <div data-square class="square" id="6"></div>
-        </div>
-        <div class="panel__row">
-          <div data-square class="square" id="7"></div>
-          <div data-square class="square" id="8"></div>
-          <div data-square class="square" id="9"></div>
-        </div>
+      <div class="menu__status" data-menu-score>
+        <h2>Your Score</h2>
+        <p data-score>0</p>
       </div>
+      <div class="menu__status player" data-menu-player>
+        <img
+          class="player__imagem"
+          src="src/assets/imgs/player.png"
+          width="101"
+          height="87"
+          alt=""
+        />
+        <span data-life>x3</span>
+      </div>
+    </header>
 
-      <div class="game__wrapper">
-        <div class="game__info">
-          <h2 class="game__title">Infome seu apelido</h2>
-          <div class="game__entrada">
-            <input class="game__ipt" type="text" name="" id="">
+    <main class="corpo">
+      <!-- Menu Lateral com as opções de controle -->
+      <div class="coluna">
+        <div class="coluna__wrapper">
+          <img
+            class="coluna__image"
+            src="src/assets/imgs/logo.png"
+            alt=""
+            width="1634"
+            height="1346"
+          />
+          <div class="coluna__btns">
+            <button class="coluna__btn" data-start>Iniciar</button>
+            <button class="coluna__btn" data-btn-toggle="configuracao">
+              Configuração
+            </button>
+            <button class="coluna__btn" data-btn-toggle="ranking">
+              Ranking
+            </button>
           </div>
-          <button class="game__btn">
-            Salvar Pontuação
-          </button>
         </div>
       </div>
 
-      <aside class="ranking" data-toggle="ranking">
-        <div class="ranking__wrapper">
-          <div class="ranking__cabecalho">
-            <span>Nome</span>
-            <span>Pontuação</span>
+      <!-- Corpo do game onde se pode jogar -->
+      <div class="game">
+        <div class="panel">
+          <div class="panel__row">
+            <div data-square class="square" id="1"></div>
+            <div data-square class="square" id="2"></div>
+            <div data-square class="square" id="3"></div>
           </div>
-
-          <ol class="ranking__info" data-ranking>
-            <li>Fix-It Felix: <span>45</span></li>
-            <li>Vanellope von Schweetz: <span>55</span></li>
-            <li>Wreck-It Ralph: <span>35</span></li>
-            <li>Calhoun: <span>40</span></li>
-            <li>King Candy: <span>25</span></li>
-            <li>Sergeant Tamora Jean Calhoun: <span>50</span></li>
-            <li>Yesss: <span>30</span></li>
-            <li>Shank: <span>20</span></li>
-            <li>KnowsMore: <span>15</span></li>
-            <li>Felícia: <span>5</span></li>
-          </ol>
-
-          <button class="ranking__btn" data-btn-toggle="ranking">
-            Fechar Ranking
-          </button>
+          <div class="panel__row">
+            <div data-square class="square" id="4"></div>
+            <div data-square class="square" id="5"></div>
+            <div data-square class="square" id="6"></div>
+          </div>
+          <div class="panel__row">
+            <div data-square class="square" id="7"></div>
+            <div data-square class="square" id="8"></div>
+            <div data-square class="square" id="9"></div>
+          </div>
         </div>
-      </aside>
 
-      <aside class="configuracao" data-toggle="configuracao">
-        <div class="configuracao__wrapper">
-
-          <label for="musica">
-            Música
-            <input type="range" name="musica" id="musica">
-          </label>
-
-          <label for="efeitos">
-            Efeitos
-            <input type="range" name="efeitos" id="efeitos">
-          </label>
-
-
-          <button class="configuracao__btn" data-btn-toggle="configuracao">
-            Salvar Configuração
-          </button>
+        <!-- Entrada de nome e Pontuação do jogador -->
+        <div class="game__wrapper" data-box-user>
+          <div class="game__info">
+            <h2 class="game__title">Infome seu apelido</h2>
+            <div class="game__entrada">
+              <input class="game__ipt" type="text" data-nome name="" id="" />
+            </div>
+            <button class="game__btn" data-salvar-pontuacao>
+              Salvar Pontuação
+            </button>
+          </div>
         </div>
-      </aside>
-    </div>
 
-  </main>
+        <!-- Ranking dos Jogadores -->
+        <aside class="ranking" data-toggle="ranking" data-menu-open="false">
+          <div class="ranking__wrapper">
+            <div class="ranking__cabecalho">
+              <span>Nome</span>
+              <span>Pontuação</span>
+            </div>
 
-  <script type="module" defer src="src/scripts/engine.js"></script>
-  <script type="module" src="src/scripts/ranking.js"></script>
-</body>
+            <!-- Local onde será exibido os valores d ranking -->
+            <ol class="ranking__info" data-ranking></ol>
 
+            <button class="ranking__btn" data-btn-toggle="ranking">
+              Fechar Ranking
+            </button>
+          </div>
+        </aside>
+
+        <!-- Controles de som -->
+        <aside class="configuracao" data-toggle="configuracao" data-menu-open="false">
+          <div class="configuracao__wrapper">
+            <label for="musica">
+              Música
+              <input
+                class="configuracao__ipt"
+                type="range"
+                name="musica"
+                id="musica"
+                min="0"
+                max="1"
+                value="0.5"
+                step="any"
+                data-music
+              />
+            </label>
+
+            <label for="efeitos">
+              Efeitos
+              <input
+                class="configuracao__ipt"
+                type="range"
+                name="efeitos"
+                id="efeitos"
+                min="0"
+                max="1"
+                value="0.5"
+                step="any"
+                data-sound
+              />
+            </label>
+
+            <button class="configuracao__btn" data-btn-toggle="configuracao">
+              Salvar Configuração
+            </button>
+          </div>
+        </aside>
+
+        <!-- Controles de endGame -->
+        <aside class="endGame" data-endGame>
+          <div class="endGame__wrapper">
+            <h3 data-endGame-message>Seu tempo acabou!</h3>
+            <p>sua pontuação atual é</p>
+            <span data-endGame-pontuacao>0</span>
+
+            <button class="endGame__btn" data-btnEndGame>
+              Próxima Vida
+            </button>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <script type="module" defer src="src/scripts/engine.js"></script>
+    <script type="module" src="src/scripts/ranking.js"></script>
+    <script type="module" src="src/scripts/menuGame.js"></script>
+    <script type="module" src="src/scripts/endGame.js"></script>
+    <script type="module" src="src/scripts/configGame.js"></script>
+  </body>
 </html>

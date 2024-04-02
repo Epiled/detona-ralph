@@ -1,4 +1,6 @@
-import toggles from "./menuGame.js";
+import menu from "./menuGame.js";
+import endGame from "./endGame.js";
+import configGame from "./configGame.js";
 
 const state = {
   view: {
@@ -14,24 +16,31 @@ const state = {
     hitPosition: null,
     results: 0,
     curretTime: 60,
+    lifes: 3,
     pause: true,
+    gameIniciado: false,
   },
   actions: {
     countDownTimerId: null,
     timeId: null,
     pause: pauseGame,
-    resumeGame: resumeGame,
+    resumeGame: startGame,
+    proximo: proximoRound,
   }
 }
 
+// Tempo para reposicionar o Ralph
 function resetTimePosition() {
-  clearInterval(state.actions.timeId);
-  setTimeout(() => {
-    randomSquare();
-    state.actions.timeId = setInterval(randomSquare, 1000);
-  }, 1000);
+  if (state.values.gameIniciado) {
+    clearInterval(state.actions.timeId);
+    setTimeout(() => {
+      randomSquare();
+      state.actions.timeId = setInterval(randomSquare, 1000);
+    }, 1000);
+  }
 }
 
+// Cronômetro de tempo
 function countDown() {
   state.values.curretTime--;
   state.view.timeLeft.textContent = state.values.curretTime;
@@ -40,17 +49,31 @@ function countDown() {
     clearInterval(state.actions.countDownTimerId);
     clearInterval(state.actions.timeId);
 
-    console.log("Game Over!");
-   // alert("Game Over! O seu resultado foi: " + state.values.results);
+    state.values.lifes--;
+    state.view.life.textContent = `x${state.values.lifes}`;
+
+    endGame.actions.endGame();
+  }
+
+  if (state.values.lifes == 0) {
+    state.values.gameIniciado = false;
+    state.view.squares.forEach((square) => {
+      square.removeAttribute('data-enemy');
+      square.removeEventListener('mousedown', handleHit);
+    });
   }
 }
 
-function playSound(audioname) {
-  let audio = new Audio(`./src/assets/sounds/${audioname}.m4a`);
-  audio.volume = 0.2;
-  audio.play();
+function proximoRound() {
+  state.values.curretTime = 5;
 }
 
+// Toca um audio
+function playSound() {
+  configGame.actions.hit();
+}
+
+// Altera a posição do Ralph
 function randomSquare() {
   state.view.squares.forEach(square => {
     square.removeAttribute('data-enemy');
@@ -64,50 +87,58 @@ function randomSquare() {
   state.values.hitPosition = randomSquare.id;
 }
 
+// HitBox do Ralph
 function addListenerHitBox() {
   state.view.squares.forEach((square) => {
-    square.addEventListener('mousedown', () => {
-      if (square.id === state.values.hitPosition) {
-        state.values.results++;
-        state.view.score.textContent = state.values.results;
-        state.values.hitPosition = null;
-        console.log(
-        )
-        square.classList.add('hit');
-        playSound('hit');
-        resetTimePosition();
-      }
-    });
+    square.addEventListener('mousedown', handleHit);
   });
 }
 
-function startGame() {
-  state.actions.countDownTimerId = setInterval(countDown, 1000);
-  state.actions.timeId = setInterval(randomSquare, 1000);
-  state.view.start.setAttribute('disabled', true);
-  state.values.pause = false;
+function handleHit() {
+  if (this.id === state.values.hitPosition) {
+    state.values.results++;
+    state.view.score.textContent = state.values.results;
+    state.values.hitPosition = null;
+    this.classList.add('hit');
+    playSound('hit');
+    if (state.gameIniciado) {
+      resetTimePosition();
+    }
+  }
 }
 
+// Começa o Jogo
+function startGame() {
+  if (menu.values.menusFechados) {
+    state.actions.countDownTimerId = setInterval(countDown, 1000);
+    state.actions.timeId = setInterval(randomSquare, 1000);
+    state.view.start.setAttribute('disabled', true);
+    state.view.life.textContent = `x${state.values.lifes}`;
+    state.values.pause = false;
+    state.values.gameIniciado = true;
+    configGame.actions.music();
+  }
+}
+
+// Pausa o Jogo
 function pauseGame() {
   clearInterval(state.actions.countDownTimerId);
   clearInterval(state.actions.timeId);
   state.values.pause = true;
 }
 
-function resumeGame() {
-  startGame()
-}
-
+// Preparação para começar o jogo
 function init() {
-  toggles.actions.iniciar();
+  menu.actions.iniciar();
+  endGame.actions.iniciar();
 
   // Adicione event listeners aos botões
   state.view.start.addEventListener('click', startGame);
-// document.getElementById('pauseButton').addEventListener('click', pauseGame);
 
   addListenerHitBox();
 }
 
+// Inicia a aplicação
 init();
 
 export default state;

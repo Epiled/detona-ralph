@@ -1,28 +1,46 @@
 .corpo {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column-reverse;
   flex: 1;
   background: url(../assets/imgs/wall.png);
   padding: 2rem;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .corpo {
+    flex-direction: row;
+  }
 }
 
 .panel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* flex: 1; */
+  max-width: 60rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .panel__row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .panel__row {
+    height: auto;
+  }
 }
 
 .square {
-  width: 20rem;
-  height: 20rem;
-  background: #1aeaa5;
-  border: .1rem solid #000;
+  max-width: 20rem;
+  max-height: 20rem;
+  background: var(--color-block);
+  border: .1rem solid var(--darker);
   position: relative;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
 }
 
 .square[data-enemy] {

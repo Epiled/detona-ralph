@@ -1,3 +1,10 @@
 :root {
-  
+  --lighter: #ffffff;
+  --darker: #000000;
+  --color-main: #ff9306;
+  --color-main-hover: #f6c500;
+  --color-secondary: #ea2300;
+  --color-block: #1aeaa5;
+  --color-menu: #ff0000;
+  --color-bar: #ffff00;
 }
