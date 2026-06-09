@@ -1,79 +1,93 @@
-# 🎮🧱 Detona Ralph
-
-Projeto do bootcamp Potencial tech Ifood - Desenvolvimento de Jogos, patrocidado pelo IFood.
-
-| :placard: Vitrine.Dev |     |
-| -------------  | --- |
-| :sparkles: Nome        | **Detona Ralph**
-| :label: Tecnologias | html, css, js
-
+<!-- ![Social Preview](./design/github/social-preview/social-preview.png) -->
 ![rafh](https://github.com/Epiled/detona-ralph/assets/55258483/f7b030af-a2c6-4785-8ec7-183cba07902e)
 
-<h2 id="detalhes-do-projeto"> 📃 Detalhes do projeto </h2>
+<h1 align="center"> 🎮 Detona Ralph 🧱 </h1>
 
-Jogo de acerta o Rapth, desenvolvido utilizando tecnologias web, como html, css e javascript.
+![Vercel Deploy](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)
+![GitHub release](https://img.shields.io/github/v/release/Epiled/detona-ralph?style=for-the-badge)
+![GitHub license](https://img.shields.io/github/license/Epiled/detona-ralph?style=for-the-badge)
 
-![Badge](https://img.shields.io/github/last-commit/Epiled/detona-ralph?style=for-the-badge)
-![Badge](https://img.shields.io/github/languages/code-size/Epiled/detona-ralph?style=for-the-badge)
-![Badge](https://img.shields.io/github/languages/count/Epiled/detona-ralph?style=for-the-badge)
-![Bagde](https://img.shields.io/badge/repo%20status-Beta-cyan?style=for-the-badge)
-![Bagde](https://img.shields.io/github/v/release/Epiled/detona-ralph?style=for-the-badge)
-![Bagde](https://img.shields.io/github/license/Epiled/detona-ralph?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/Epiled/detona-ralph?style=for-the-badge)
+![Code Size](https://img.shields.io/github/languages/code-size/Epiled/detona-ralph?style=for-the-badge)
 
-![Badge](https://img.shields.io/badge/-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![Badge](https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![Badge](https://img.shields.io/badge/-JS-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-<h2> 📑 Tabela de Conteúdos </h2>
+## 📑 Table of Contents
 
-<!--ts-->
-   * [Detalhes do projeto](#detalhes-do-projeto)
-   * [Demonstração](#demonstracao)
-   * [Instalação](#instalacao)
-   * [Como usar](#como-usar)
-   * [Tecnologias](#tecnologias)
-   * [Autor](#autor)
-<!--te-->
+- [📑 Table of Contents](#-table-of-contents)
+- [📖 Overview](#-overview)
+- [🛠️ Technologies](#-technologies)
+- [⚡ Performance & PWA](#-performance--pwa)
+- [🚀 Demo](#-demo)
+- [📦 Install and Use](#-install-and-use)
+- [📂 File Structure](#-file-structure)
+- [🎨 Reference & Inspiration](#-reference--inspiration)
+- [👨‍💻 Author and Contact](#%E2%80%8D-author-and-contact)
 
-<h2 id="demonstracao"> 👀 Demonstração </h2>
+## 📖 Overview
+
+Coming Soon!
+
+## 🛠 Technologies
+
+The following technologies were used to build this project:
+
+- [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+## ⚡ Performance & PWA
+
+<!-- ![Lighthouse Performance](./design/github/lighthouse-report/lighthouse-report-light.png) -->
+
+Comming Soon!
+
+## 🚀 Demo
+
+Comming Soon!
+
+### Desktop
 
 https://github.com/Epiled/detona-ralph/assets/55258483/251b9056-57d8-417f-9de1-d43a6afd5816
 
+### Mobile
 
-<h2 id="instalacao"> ⚙ Instalação </h2>
+Comming Soon!
 
+## 📦 Install and Use
+
+This project currently operates without a local development server or build step, meaning it can be run directly from your file system.
+
+1. Clone the repository:
+```bash
+git clone [https://github.com/Epiled/noweb.git](https://github.com/Epiled/detona-ralph.git)
+cd detona-ralph
 ```
-1. git clone https://github.com/Epiled/detona-ralph.git
-2. cd detona-ralph
-```
 
-<h2 id="como-usar"> 👩‍🏫 Como usar </h2>
+### Local Execution
 
-```
-1. Abra o arquivo index.html no navegador (Utilizar Live Server ou semelhante)
-```
+To view and interact with the project, simply open the index.html file in your preferred web browser. You can do this by double-clicking the file in your file explorer or dragging it into an open browser tab.
 
-<h2 id="tecnologias"> 🛠 Tecnologias </h2>
+## 📂 File Structure
 
-As seguintes tecnologias foram usadas na construção deste projeto:
+Comming Soon!
 
-<ul>
-  <li><a href="https://www.w3schools.com/html/default.asp" target="_blank">HTML5</a></li>
-  <li><a href="https://www.w3schools.com/css/default.asp" target="_blank">CSS3</a></li>
-  <li><a href="https://www.w3schools.com/js/default.asp" target="_blank">JavaScript</a></li>
-</ul>
+## 🎨 Reference & Inspiration
 
-<h2 id="autor"> 👨‍💻 Autor </h2>
+Comming Soon!
+
+## 👨‍💻 Author and Contact
 
 <a href="https://github.com/Epiled">
+  <img src="https://user-images.githubusercontent.com/55258483/178338085-2cea8bf2-6d0c-409a-9d0e-23359b7d303e.png" alt="Felindo">
+  <br />
+  <sub><b>Felipe De Andrade</b></sub>
+</a>
 
-![Felindo](https://user-images.githubusercontent.com/55258483/178338085-2cea8bf2-6d0c-409a-9d0e-23359b7d303e.png)
- <br />
- <sub><b>Felipe De Andrade</b></sub></a>
+Made with ❤️ by Felipe De Andrade 👋🏽 Get in touch!
 
-Feito com ❤️ por Felipe De Andrade 👋🏽 Entre em contato!
-
-[![Linkedin Badge](https://img.shields.io/badge/-Felipe-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/fademendonca/)](https://www.linkedin.com/in/fademendonca/)
-[![Gmail Badge](https://img.shields.io/badge/-felipe.deam98@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:felipe.deam98@gmail.com)](mailto:felipe.deam98@gmail.com)
-[![Instagram Badge](https://img.shields.io/badge/-Instagram-e4405f?style=flat-square&logo=Instagram&logoColor=white&link=https://www.instagram.com/felipe.deam/)](https://www.instagram.com/felipe.deam/)
-[![Codepen Badge](https://img.shields.io/badge/-Codepen-000000?style=flat-square&logo=Codepen&logoColor=white&link=https://codepen.io/epiled)](https://codepen.io/epiled)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/fademendonca/)
+[![CodePen](https://img.shields.io/badge/CodePen-000000?style=for-the-badge&logo=codepen&logoColor=white)](https://codepen.io/epiled)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:felipe.deam98@gmail.com)
