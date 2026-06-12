@@ -62,7 +62,7 @@ This project currently operates without a local development server or build step
 
 1. Clone the repository:
 ```bash
-git clone [https://github.com/Epiled/noweb.git](https://github.com/Epiled/detona-ralph.git)
+git clone https://github.com/Epiled/detona-ralph.git
 cd detona-ralph
 ```
 
