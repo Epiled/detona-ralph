@@ -1,22 +1,22 @@
-.configuracao {
+.configuration {
   align-self: center;
   flex: 1;
   font-size: 1.5rem;
   color: var(--lighter);
   background-color: var(--color-secondary);
   border: 1rem dashed var(--color-main);
-  padding: .5rem;
+  padding: 0.5rem;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   display: none;
 }
 
-.configuracao.active {
+.configuration.active {
   display: block;
 }
 
-.configuracao__wrapper {
+.configuration__wrapper {
   background-color: var(--darker);
   padding: 2rem;
   display: flex;
@@ -27,11 +27,11 @@
   gap: 1rem;
 }
 
-.configuracao__ipt {
+.configuration__ipt {
   accent-color: var(--color-main);
 }
 
-.configuracao__btn {
+.configuration__btn {
   background: none;
   font-family: inherit;
   color: var(--lighter);
@@ -42,6 +42,6 @@
   font-size: 1.25rem;
 }
 
-.configuracao__btn:hover {
+.configuration__btn:hover {
   color: var(--color-main-hover);
 }

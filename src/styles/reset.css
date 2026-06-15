@@ -129,7 +129,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -140,7 +140,7 @@ table {
 
 :root {
   font-size: 62.5%;
-  font-family: 'Press Start 2P', system-ui;
+  font-family: "Press Start 2P", system-ui;
 }
 
 * {

@@ -1,9 +1,9 @@
-@import url(_variaveis.css);
+@import url(_variables.css);
 @import url(menu.css);
-@import url(coluna.css);
-@import url(corpo.css);
+@import url(column.css);
+@import url(container.css);
 @import url(panel.css);
 @import url(game.css);
 @import url(ranking.css);
-@import url(configuracao.css);
+@import url(configuration.css);
 @import url(endGame.css);

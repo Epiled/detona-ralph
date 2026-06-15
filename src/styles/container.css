@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  flex: 1;
+  background: url(../assets/imgs/wall.png);
+  padding: 2rem;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+}

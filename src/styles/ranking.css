@@ -3,9 +3,9 @@
   align-self: center;
   flex: 1;
   color: var(--lighter);
-  background-color: rgb(234, 35, 0);
-  border: 1rem dashed rgb(255, 147, 6);
-  padding: .5rem;
+  background-color: var(--color-secondary);
+  border: 1rem dashed var(--color-main);
+  padding: 0.5rem;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -18,7 +18,7 @@
 }
 
 .ranking__wrapper {
-  background-color: black;
+  background-color: var(--darker);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@
   align-items: center;
 }
 
-.ranking__cabecalho {
+.ranking__header {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -35,7 +35,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .ranking__cabecalho {
+  .ranking__header {
     font-size: 2rem;
   }
 }
@@ -47,7 +47,7 @@
   font-size: 1.5rem;
 }
 
-.ranking__info li {
+.ranking__item {
   display: flex;
   justify-content: space-between;
   gap: 3rem;
@@ -55,11 +55,10 @@
 }
 
 @media screen and (min-width: 768px) {
-  .ranking__info li {
+  .ranking__item {
     font-size: 1.5rem;
   }
 }
-
 
 .ranking__btn {
   background: none;
@@ -79,5 +78,5 @@
 }
 
 .ranking__btn:hover {
-  color: #f6c500;
+  color: var(--color-main-hover);
 }

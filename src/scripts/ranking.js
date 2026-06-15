@@ -97,7 +97,7 @@ function ordenaValores(valores) {
 
 function construiRanking(dados) {
   const lista = dados.map((dado) => {
-    return `<li>${dado.nome}: <span>${dado.pontuacao}</span></li>`
+    return `<li class="ranking__item">${dado.nome}: <span>${dado.pontuacao}</span></li>`
   });
 
   ranking.view.container.innerHTML = lista.join('');
