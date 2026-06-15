@@ -1,5 +1,5 @@
 <!-- ![Social Preview](./design/github/social-preview/social-preview.png) -->
-![rafh](https://github.com/Epiled/detona-ralph/assets/55258483/f7b030af-a2c6-4785-8ec7-183cba07902e)
+![Social Preview](https://github.com/Epiled/detona-ralph/assets/55258483/f7b030af-a2c6-4785-8ec7-183cba07902e)
 
 <h1 align="center"> 🎮 Detona Ralph 🧱 </h1>
 
@@ -28,7 +28,9 @@
 
 ## 📖 Overview
 
-Coming Soon!
+**Wreck-It Ralph - Whack-a-Mole** is an interactive, fast-paced web game inspired by the classic arcade experience. Built with a strong focus on DOM manipulation and state management, this project brings the 8-bit dynamic world of Wreck-It Ralph directly to the browser. 
+
+Players are challenged to test their reflexes by "whacking" the target character as it randomly spawns across a grid within a strict time limit.
 
 ## 🛠 Technologies
 
@@ -46,7 +48,9 @@ Comming Soon!
 
 ## 🚀 Demo
 
-Comming Soon!
+Access the live application below to interact with the interface and run your own performance tests
+
+Detona Ralph: [Detona Ralph](https://detona-ralph-two.vercel.app/)
 
 ### Desktop
 
@@ -58,7 +62,7 @@ Comming Soon!
 
 ## 📦 Install and Use
 
-This project currently operates without a local development server or build step, meaning it can be run directly from your file system.
+**Prerequisites:** Node.js (v22.x) or higher installed.
 
 1. Clone the repository:
 ```bash
@@ -78,11 +82,20 @@ npm run dev
 
 ## 📂 File Structure
 
-Comming Soon!
+detona-ralph/
+├── src/                # Main source code
+│   ├── assets/         # Game sprites, audio files, and background images
+│   ├── db/             # Local mock data or level configuration JSONs
+│   ├── scripts/        # Core game logic, state management, and DOM manipulation
+│   ├── styles/         # Global styles, animations, and theme definitions
+├── index.html          # Main game entry point
+└── package.json        # Project dependencies and automation scripts
 
 ## 🎨 Reference & Inspiration
 
-Comming Soon!
+This project was developed as a practical challenge during the **[Bootcamp Potência Tech iFood - Programação do Zero](https://www.dio.me/bootcamp/potencia-tech-ifood-programacao-do-zero)**, hosted by DIO (Digital Innovation One). 
+
+The core game mechanics, grid structure, and initial logic concepts were inspired by the educational materials provided throughout the course, serving as a foundation to apply advanced DOM manipulation and Vanilla JavaScript state management.
 
 ## 👨‍💻 Author and Contact
 
