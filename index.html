@@ -89,15 +89,23 @@
         </div>
 
         <!-- Player name and score input -->
-        <div class="game__wrapper" data-box-user>
-          <div class="game__info">
-            <h2 class="game__title">Infome seu apelido</h2>
+        <form method="post" class="game__wrapper" action="/" data-box-user>
+          <fieldset class="game__info">
+            <h2 class="game__title" for="player-name">Infome seu apelido</h2>
             <div class="game__entry">
-              <input class="game__ipt" type="text" data-name name="" id="" />
+              <input
+                class="game__ipt"
+                type="text"
+                data-name
+                name="player-name"
+                id="player-name"
+              />
             </div>
-            <button class="game__btn" data-save-score>Salvar Pontuação</button>
-          </div>
-        </div>
+            <button type="button" class="game__btn" data-save-score>
+              Salvar Pontuação
+            </button>
+          </fieldset>
+        </form>
 
         <!-- Player Leaderboard -->
         <aside class="ranking" data-toggle="ranking" data-menu-open="false">
