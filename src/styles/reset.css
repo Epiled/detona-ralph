@@ -141,6 +141,7 @@ table {
 :root {
   font-size: 62.5%;
   font-family: "Press Start 2P", system-ui;
+  font-display: swap;
 }
 
 * {
