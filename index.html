@@ -23,7 +23,7 @@
   </head>
 
   <body>
-    <!-- Menu Superior com status do Game -->
+    <!-- Top menu with game status -->
     <header class="menu">
       <div class="menu__status" data-menu-time>
         <h2 class="menu__title">Time Left</h2>
@@ -46,7 +46,7 @@
     </header>
 
     <main class="container">
-      <!-- Menu Lateral com as opções de controle -->
+      <!-- Side menu with control options -->
       <div class="column">
         <div class="column__wrapper">
           <img
@@ -68,7 +68,7 @@
         </div>
       </div>
 
-      <!-- Corpo do game onde se pode jogar -->
+      <!-- Playable game area -->
       <div class="game">
         <div class="panel">
           <div class="panel__row">
@@ -88,20 +88,18 @@
           </div>
         </div>
 
-        <!-- Entrada de nome e Pontuação do jogador -->
+        <!-- Player name and score input -->
         <div class="game__wrapper" data-box-user>
           <div class="game__info">
             <h2 class="game__title">Infome seu apelido</h2>
             <div class="game__entry">
-              <input class="game__ipt" type="text" data-nome name="" id="" />
+              <input class="game__ipt" type="text" data-name name="" id="" />
             </div>
-            <button class="game__btn" data-salvar-pontuacao>
-              Salvar Pontuação
-            </button>
+            <button class="game__btn" data-save-score>Salvar Pontuação</button>
           </div>
         </div>
 
-        <!-- Ranking dos Jogadores -->
+        <!-- Player Leaderboard -->
         <aside class="ranking" data-toggle="ranking" data-menu-open="false">
           <div class="ranking__wrapper">
             <div class="ranking__header">
@@ -109,7 +107,7 @@
               <span>Pontuação</span>
             </div>
 
-            <!-- Local onde será exibido os valores d ranking -->
+            <!-- Ranking display container -->
             <ol class="ranking__info" data-ranking></ol>
 
             <button class="ranking__btn" data-btn-toggle="ranking">
@@ -118,20 +116,20 @@
           </div>
         </aside>
 
-        <!-- Controles de som -->
+        <!-- Sound controls -->
         <aside
           class="configuration"
           data-toggle="configuration"
           data-menu-open="false"
         >
           <div class="configuration__wrapper">
-            <label for="musica">
+            <label for="music">
               Música
               <input
                 class="configuration__ipt"
                 type="range"
-                name="musica"
-                id="musica"
+                name="music"
+                id="music"
                 min="0"
                 max="1"
                 value="0.5"
@@ -140,13 +138,13 @@
               />
             </label>
 
-            <label for="efeitos">
+            <label for="effects">
               Efeitos
               <input
                 class="configuration__ipt"
                 type="range"
-                name="efeitos"
-                id="efeitos"
+                name="effects"
+                id="effects"
                 min="0"
                 max="1"
                 value="0.5"
@@ -161,14 +159,14 @@
           </div>
         </aside>
 
-        <!-- Controles de endGame -->
+        <!-- End-game controls -->
         <aside class="endGame" data-endGame>
           <div class="endGame__wrapper">
             <h3 data-endGame-message>Seu tempo acabou!</h3>
             <p>sua pontuação atual é</p>
-            <span data-endGame-pontuacao>0</span>
+            <span data-endGame-score>0</span>
 
-            <button class="endGame__btn" data-btnEndGame>Próxima Vida</button>
+            <button class="endGame__btn" data-endGame-btn>Próxima Vida</button>
           </div>
         </aside>
       </div>

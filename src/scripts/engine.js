@@ -4,34 +4,34 @@ import configGame from "./configGame.js";
 
 const state = {
   view: {
-    timeLeft: document.querySelector('[data-time]'),
-    score: document.querySelector('[data-score]'),
-    squares: document.querySelectorAll('[data-square]'),
-    enemy: document.querySelector('[data-enemy]'),
-    life: document.querySelector('[data-life]'),
-    start: document.querySelector('[data-start]'),
+    timeLeft: document.querySelector("[data-time]"),
+    score: document.querySelector("[data-score]"),
+    squares: document.querySelectorAll("[data-square]"),
+    enemy: document.querySelector("[data-enemy]"),
+    life: document.querySelector("[data-life]"),
+    start: document.querySelector("[data-start]"),
   },
   values: {
     gameVelocity: 1000,
     hitPosition: null,
     results: 0,
-    curretTime: 60,
-    lifes: 3,
+    currentTime: 8,
+    lives: 1,
     pause: true,
-    gameIniciado: false,
+    gameStarted: false,
   },
   actions: {
     countDownTimerId: null,
     timeId: null,
     pause: pauseGame,
     resumeGame: startGame,
-    proximo: proximoRound,
-  }
-}
+    next: nextRound,
+  },
+};
 
-// Tempo para reposicionar o Ralph
+// Time to respawn Ralph
 function resetTimePosition() {
-  if (state.values.gameIniciado) {
+  if (state.values.gameStarted) {
     clearInterval(state.actions.timeId);
     setTimeout(() => {
       randomSquare();
@@ -40,57 +40,57 @@ function resetTimePosition() {
   }
 }
 
-// Cronômetro de tempo
+// Countdown timer
 function countDown() {
-  state.values.curretTime--;
-  state.view.timeLeft.textContent = state.values.curretTime;
+  state.values.currentTime--;
+  state.view.timeLeft.textContent = state.values.currentTime;
 
-  if (state.values.curretTime <= 0) {
+  if (state.values.currentTime <= 0) {
     clearInterval(state.actions.countDownTimerId);
     clearInterval(state.actions.timeId);
 
-    state.values.lifes--;
-    state.view.life.textContent = `x${state.values.lifes}`;
+    state.values.lives--;
+    state.view.life.textContent = `x${state.values.lives}`;
 
     endGame.actions.endGame();
   }
 
-  if (state.values.lifes == 0) {
-    state.values.gameIniciado = false;
+  if (state.values.lives == 0) {
+    state.values.gameStarted = false;
     state.view.squares.forEach((square) => {
-      square.removeAttribute('data-enemy');
-      square.removeEventListener('mousedown', handleHit);
+      square.removeAttribute("data-enemy");
+      square.removeEventListener("mousedown", handleHit);
     });
   }
 }
 
-function proximoRound() {
-  state.values.curretTime = 5;
+function nextRound() {
+  state.values.currentTime = 5;
 }
 
-// Toca um audio
+// Play sound effect
 function playSound() {
   configGame.actions.hit();
 }
 
-// Altera a posição do Ralph
+// Update Ralph's position
 function randomSquare() {
-  state.view.squares.forEach(square => {
-    square.removeAttribute('data-enemy');
-    square.classList.remove('hit');
+  state.view.squares.forEach((square) => {
+    square.removeAttribute("data-enemy");
+    square.classList.remove("hit");
   });
 
   let randomNumber = Math.floor(Math.random() * 9);
   let randomSquare = state.view.squares[randomNumber];
 
-  randomSquare.setAttribute('data-enemy', true);
+  randomSquare.setAttribute("data-enemy", true);
   state.values.hitPosition = randomSquare.id;
 }
 
-// HitBox do Ralph
+// Ralph's hitbox
 function addListenerHitBox() {
   state.view.squares.forEach((square) => {
-    square.addEventListener('mousedown', handleHit);
+    square.addEventListener("mousedown", handleHit);
   });
 }
 
@@ -99,46 +99,48 @@ function handleHit() {
     state.values.results++;
     state.view.score.textContent = state.values.results;
     state.values.hitPosition = null;
-    this.classList.add('hit');
-    playSound('hit');
-    if (state.gameIniciado) {
+    this.classList.add("hit");
+    playSound("hit");
+    if (state.gameStarted) {
       resetTimePosition();
     }
   }
 }
 
-// Começa o Jogo
+// Start the Game
 function startGame() {
-  if (menu.values.menusFechados) {
-    state.actions.countDownTimerId = setInterval(countDown, 1000);
-    state.actions.timeId = setInterval(randomSquare, 1000);
-    state.view.start.setAttribute('disabled', true);
-    state.view.life.textContent = `x${state.values.lifes}`;
-    state.values.pause = false;
-    state.values.gameIniciado = true;
-    configGame.actions.music();
+  if (!menu.values.menusClosed) {
+    return;
   }
+
+  state.actions.countDownTimerId = setInterval(countDown, 1000);
+  state.actions.timeId = setInterval(randomSquare, 1000);
+  state.view.start.setAttribute("disabled", true);
+  state.view.life.textContent = `x${state.values.lives}`;
+  state.values.pause = false;
+  state.values.gameStarted = true;
+  configGame.actions.music();
 }
 
-// Pausa o Jogo
+// Pause the game
 function pauseGame() {
   clearInterval(state.actions.countDownTimerId);
   clearInterval(state.actions.timeId);
   state.values.pause = true;
 }
 
-// Preparação para começar o jogo
+// Game setup
 function init() {
-  menu.actions.iniciar();
-  endGame.actions.iniciar();
+  menu.actions.init();
+  endGame.actions.init();
 
-  // Adicione event listeners aos botões
-  state.view.start.addEventListener('click', startGame);
+  // Add event listeners to buttons
+  state.view.start.addEventListener("click", startGame);
 
   addListenerHitBox();
 }
 
-// Inicia a aplicação
+// Init app
 init();
 
 export default state;
