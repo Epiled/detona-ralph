@@ -50,7 +50,7 @@ Comming Soon!
 
 Access the live application below to interact with the interface and run your own performance tests
 
-Detona Ralph: [Detona Ralph](https://detona-ralph-two.vercel.app/)
+Detona Ralph: [https://detona-ralph-two.vercel.app/](https://detona-ralph-two.vercel.app/)
 
 ### Desktop
 
@@ -82,6 +82,7 @@ npm run dev
 
 ## 📂 File Structure
 
+```text
 detona-ralph/
 ├── src/                # Main source code
 │   ├── assets/         # Game sprites, audio files, and background images
@@ -90,6 +91,7 @@ detona-ralph/
 │   ├── styles/         # Global styles, animations, and theme definitions
 ├── index.html          # Main game entry point
 └── package.json        # Project dependencies and automation scripts
+```
 
 ## 🎨 Reference & Inspiration
 
