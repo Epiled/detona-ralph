@@ -2,73 +2,82 @@ import state from "./engine.js";
 
 const menu = {
   view: {
-    containers: document.querySelectorAll('[data-toggle]'),
-    btnToggle: document.querySelectorAll('[data-btn-toggle]'),
+    containers: document.querySelectorAll("[data-toggle]"),
+    btnToggle: document.querySelectorAll("[data-btn-toggle]"),
   },
   values: {
-    exibindoMenu: false,
-    ativo: null,
-    menusFechados: true,
+    showMenu: false,
+    active: null,
+    menusClosed: true,
   },
   actions: {
-    iniciar: init,
+    init: init,
     checkMenus: checkStateMenus,
-  }
-}
+  },
+};
 
-// Verifica e Exibi o menu ativo
-function handleMenuAtivo(selecionado) {
-  if (selecionado != menu.values.ativo) {
-    menu.view.containers.forEach(container => {
-      container.classList.remove('active');
-    })
-    selecionado.classList.toggle('active');
-    menu.values.exibindoMenu = true;
+// Verify and show the active menu
+function handleMenuActive(selected) {
+  if (selected != menu.values.active) {
+    menu.view.containers.forEach((container) => {
+      container.classList.remove("active");
+    });
+    selected.classList.toggle("active");
+    menu.values.showMenu = true;
   } else {
-    selecionado.classList.toggle('active');
-    menu.values.exibindoMenu = false;
+    selected.classList.toggle("active");
+    menu.values.showMenu = false;
+    selected.dataset.menuOpen = "false";
+  }
+  menu.actions.checkMenus();
+}
+
+// Determine if the game should resume
+function handleResumeGame(selected) {
+  if (selected.classList.contains("active")) {
+    state.actions.pause();
+  } else if (
+    !selected.classList.contains("active") &&
+    state.values.gameStarted
+  ) {
+    state.actions.resumeGame();
   }
 }
 
-// Determina se o jogo deve resumir ou não
-function handleResumeGame(selecionado) {
-  if (selecionado.classList.contains("active")) {
-    state.actions.pause();
-  } else if (!selecionado.classList.contains("active") && state.values.gameIniciado) {
-    state.actions.resumeGame();
-  } 
-}
+// Retrieve elements for validation
+function handleToggle(type) {
+  const typeSelected = type.dataset.btnToggle;
 
-// Adquiri os elemntos para verificações
-function handleToggle(tipo) {
-  const tipoSelecionado = tipo.dataset.btnToggle;
-
-  const selecionado = Array.from(menu.view.containers).find((element) =>
-    element.dataset.toggle === tipoSelecionado
+  const selected = Array.from(menu.view.containers).find(
+    (element) => element.dataset.toggle === typeSelected,
   );
 
-  selecionado.dataset.menuOpen == 'false' ? selecionado.dataset.menuOpen = 'true' : selecionado.dataset.menuOpen = 'false'
+  selected.dataset.menuOpen == "false"
+    ? (selected.dataset.menuOpen = "true")
+    : (selected.dataset.menuOpen = "false");
 
-  handleMenuAtivo(selecionado);
-  menu.values.ativo = selecionado;
-  handleResumeGame(selecionado)
+  handleMenuActive(selected);
+  menu.values.active = selected;
+  handleResumeGame(selected);
 }
 
 function checkStateMenus() {
-  const listaConvertida = Array.from(menu.view.containers)
-  const estadosMenus = listaConvertida.some(item => item.dataset.menuOpen === 'true');
-  menu.values.menusFechados = !estadosMenus;
+  const listConverted = Array.from(menu.view.containers);
+  const statesMenus = listConverted.some(
+    (item) => item.dataset.menuOpen === "true",
+  );
+  menu.values.menusClosed = !statesMenus;
 }
 
-// Prepara os menus
+// Setup the menus
 function init() {
-  menu.view.btnToggle.forEach(btn => {
-    btn.addEventListener('click', () => {
+  menu.view.btnToggle.forEach((btn) => {
+    btn.addEventListener("click", () => {
       state.actions.pause();
       handleToggle(btn);
       checkStateMenus();
-    })
-  })
+    });
+  });
 }
 
 export default menu;

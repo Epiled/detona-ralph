@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detona Ralph - Game</title>
 
+    <meta
+      name="description"
+      content="An interactive, browser-based Whack-a-Mole game themed around Wreck-It Ralph. Test your reflexes by catching Ralph before the time runs out!"
+    />
+
     <link
       rel="shortcut icon"
-      href="src/assets/imgs/favicon.jpg"
+      href="./src/assets/favicon/favicon.jpg"
       type="image/jpg"
     />
 
@@ -18,98 +23,106 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="src/styles/reset.css" />
-    <link rel="stylesheet" href="src/styles/main.css" />
+    <link rel="stylesheet" href="./src/styles/reset.css" />
+    <link rel="stylesheet" href="./src/styles/main.css" />
   </head>
 
   <body>
-    <!-- Menu Superior com status do Game -->
+    <!-- Top menu with game status -->
     <header class="menu">
       <div class="menu__status" data-menu-time>
-        <h2>Time Left</h2>
+        <h2 class="menu__title">Time Left</h2>
         <p data-time>0</p>
       </div>
       <div class="menu__status" data-menu-score>
-        <h2>Your Score</h2>
+        <h2 class="menu__title">Your Score</h2>
         <p data-score>0</p>
       </div>
-      <div class="menu__status player" data-menu-player>
+      <div class="menu__status menu__status--player" data-menu-player>
         <img
-          class="player__imagem"
+          class="menu__image"
           src="src/assets/imgs/player.png"
           width="101"
           height="87"
           alt=""
+          fetchpriority="high"
         />
         <span data-life>x3</span>
       </div>
     </header>
 
-    <main class="corpo">
-      <!-- Menu Lateral com as opções de controle -->
-      <div class="coluna">
-        <div class="coluna__wrapper">
+    <main class="container">
+      <!-- Side menu with control options -->
+      <div class="column">
+        <div class="column__wrapper">
           <img
-            class="coluna__image"
+            class="column__image"
             src="src/assets/imgs/logo.png"
             alt=""
             width="1634"
             height="1346"
+            fetchpriority="high"
           />
-          <div class="coluna__btns">
-            <button class="coluna__btn" data-start>Iniciar</button>
-            <button class="coluna__btn" data-btn-toggle="configuracao">
+          <div class="column__btns">
+            <button class="column__btn" data-start>Iniciar</button>
+            <button class="column__btn" data-btn-toggle="configuration">
               Configuração
             </button>
-            <button class="coluna__btn" data-btn-toggle="ranking">
+            <button class="column__btn" data-btn-toggle="ranking">
               Ranking
             </button>
           </div>
         </div>
       </div>
 
-      <!-- Corpo do game onde se pode jogar -->
+      <!-- Playable game area -->
       <div class="game">
         <div class="panel">
           <div class="panel__row">
-            <div data-square class="square" id="1"></div>
-            <div data-square class="square" id="2"></div>
-            <div data-square class="square" id="3"></div>
+            <div data-square class="panel__square" id="1"></div>
+            <div data-square class="panel__square" id="2"></div>
+            <div data-square class="panel__square" id="3"></div>
           </div>
           <div class="panel__row">
-            <div data-square class="square" id="4"></div>
-            <div data-square class="square" id="5"></div>
-            <div data-square class="square" id="6"></div>
+            <div data-square class="panel__square" id="4"></div>
+            <div data-square class="panel__square" id="5"></div>
+            <div data-square class="panel__square" id="6"></div>
           </div>
           <div class="panel__row">
-            <div data-square class="square" id="7"></div>
-            <div data-square class="square" id="8"></div>
-            <div data-square class="square" id="9"></div>
+            <div data-square class="panel__square" id="7"></div>
+            <div data-square class="panel__square" id="8"></div>
+            <div data-square class="panel__square" id="9"></div>
           </div>
         </div>
 
-        <!-- Entrada de nome e Pontuação do jogador -->
-        <div class="game__wrapper" data-box-user>
-          <div class="game__info">
-            <h2 class="game__title">Infome seu apelido</h2>
-            <div class="game__entrada">
-              <input class="game__ipt" type="text" data-nome name="" id="" />
+        <!-- Player name and score input -->
+        <form method="post" class="game__wrapper" action="/" data-box-user>
+          <fieldset class="game__info">
+            <h2 class="game__title" for="player-name">Infome seu apelido</h2>
+            <div class="game__entry">
+              <input
+                class="game__ipt"
+                type="text"
+                data-name
+                name="player-name"
+                id="player-name"
+              />
             </div>
-            <button class="game__btn" data-salvar-pontuacao>
+            <button type="button" class="game__btn" data-save-score>
               Salvar Pontuação
             </button>
-          </div>
-        </div>
+          </fieldset>
+        </form>
 
-        <!-- Ranking dos Jogadores -->
+        <!-- Player Leaderboard -->
         <aside class="ranking" data-toggle="ranking" data-menu-open="false">
           <div class="ranking__wrapper">
-            <div class="ranking__cabecalho">
+            <div class="ranking__header">
               <span>Nome</span>
               <span>Pontuação</span>
             </div>
 
-            <!-- Local onde será exibido os valores d ranking -->
+            <!-- Ranking display container -->
             <ol class="ranking__info" data-ranking></ol>
 
             <button class="ranking__btn" data-btn-toggle="ranking">
@@ -118,20 +131,20 @@
           </div>
         </aside>
 
-        <!-- Controles de som -->
+        <!-- Sound controls -->
         <aside
-          class="configuracao"
-          data-toggle="configuracao"
+          class="configuration"
+          data-toggle="configuration"
           data-menu-open="false"
         >
-          <div class="configuracao__wrapper">
-            <label for="musica">
+          <div class="configuration__wrapper">
+            <label for="music">
               Música
               <input
-                class="configuracao__ipt"
+                class="configuration__ipt"
                 type="range"
-                name="musica"
-                id="musica"
+                name="music"
+                id="music"
                 min="0"
                 max="1"
                 value="0.5"
@@ -140,13 +153,13 @@
               />
             </label>
 
-            <label for="efeitos">
+            <label for="effects">
               Efeitos
               <input
-                class="configuracao__ipt"
+                class="configuration__ipt"
                 type="range"
-                name="efeitos"
-                id="efeitos"
+                name="effects"
+                id="effects"
                 min="0"
                 max="1"
                 value="0.5"
@@ -155,20 +168,20 @@
               />
             </label>
 
-            <button class="configuracao__btn" data-btn-toggle="configuracao">
+            <button class="configuration__btn" data-btn-toggle="configuration">
               Salvar Configuração
             </button>
           </div>
         </aside>
 
-        <!-- Controles de endGame -->
+        <!-- End-game controls -->
         <aside class="endGame" data-endGame>
           <div class="endGame__wrapper">
             <h3 data-endGame-message>Seu tempo acabou!</h3>
             <p>sua pontuação atual é</p>
-            <span data-endGame-pontuacao>0</span>
+            <span data-endGame-score>0</span>
 
-            <button class="endGame__btn" data-btnEndGame>Próxima Vida</button>
+            <button class="endGame__btn" data-endGame-btn>Próxima Vida</button>
           </div>
         </aside>
       </div>

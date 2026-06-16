@@ -9,7 +9,7 @@
   width: 100%;
   align-self: center;
   margin-top: 3rem;
-  padding: .5rem;
+  padding: 0.5rem;
   flex: 1;
   color: var(--lighter);
   background-color: var(--color-secondary);
@@ -44,12 +44,11 @@
   }
 }
 
-
-.game__entrada {
+.game__entry {
   position: relative;
   width: 100%;
   max-width: 35rem;
-  border-bottom: .2rem solid var(--lighter);
+  border-bottom: 0.2rem solid var(--lighter);
 }
 
 .game__ipt {
