@@ -44,7 +44,7 @@ The following technologies were used to build this project:
 
 <!-- ![Lighthouse Performance](./design/github/lighthouse-report/lighthouse-report-light.png) -->
 
-Comming Soon!
+Coming Soon!
 
 ## 🚀 Demo
 
@@ -58,7 +58,7 @@ https://github.com/Epiled/detona-ralph/assets/55258483/251b9056-57d8-417f-9de1-d
 
 ### Mobile
 
-Comming Soon!
+Coming Soon!
 
 ## 📦 Install and Use
 
