@@ -82,6 +82,8 @@ npm run dev
 
 ## 📂 File Structure
 
+Below is the project architecture. All development should be done inside the src/ folder.
+
 ```text
 detona-ralph/
 ├── src/                # Main source code
