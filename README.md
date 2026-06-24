@@ -1,3 +1,6 @@
+
+
+
 ![Social Preview](./design/github/social-preview/social-preview.png)
 
 <h1 align="center"> 🎮 Detona Ralph 🧱 </h1>
@@ -51,11 +54,11 @@ Detona Ralph: [https://detona-ralph-two.vercel.app/](https://detona-ralph-two.ve
 
 ### Desktop
 
-[desktop.webm]https://github.com/Epiled/detona-ralph/assets/55258483/251b9056-57d8-417f-9de1-d43a6afd5816
+[desktop.webm](https://github.com/user-attachments/assets/e5e995cc-35cd-4bc1-8f26-6c0881fb5452)
 
 ### Mobile
 
-Coming Soon!
+[mobile.webm](https://github.com/user-attachments/assets/cbb0fad7-506f-407c-960f-4c93dc1a22df)
 
 ## 📦 Install and Use
 
