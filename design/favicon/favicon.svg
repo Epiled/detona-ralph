@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 2048 2048" style="enable-background:new 0 0 2048 2048;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<symbol  id="Save" viewBox="-32 -32 64 64">
+	<path class="st0" d="M21.2,32H-32v-64h64v53.5L21.2,32z M8.6,25V7.3h-7V25H8.6z M25-25h-50v50h8.9V0.3h31.7V25h2.8l6.6-6.4V-25z"/>
+</symbol>
+<circle cx="1024" cy="1024" r="1025"/>
+<use xlink:href="#Save"  width="64" height="64" id="Icon" x="-32" y="-32" transform="matrix(15 0 0 -15 1024 1024)" style="overflow:visible;"/>
+</svg>
