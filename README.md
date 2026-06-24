@@ -1,5 +1,4 @@
-<!-- ![Social Preview](./design/github/social-preview/social-preview.png) -->
-![Social Preview](https://github.com/Epiled/detona-ralph/assets/55258483/f7b030af-a2c6-4785-8ec7-183cba07902e)
+![Social Preview](./design/github/social-preview/social-preview.png)
 
 <h1 align="center"> 🎮 Detona Ralph 🧱 </h1>
 
@@ -42,19 +41,17 @@ The following technologies were used to build this project:
 
 ## ⚡ Performance & PWA
 
-<!-- ![Lighthouse Performance](./design/github/lighthouse-report/lighthouse-report-light.png) -->
-
-Coming Soon!
+![Lighthouse Performance](./design/github/lighthouse-report/lighthouse-report-light.png)
 
 ## 🚀 Demo
 
-Access the live application below to interact with the interface and run your own performance tests
+Access the live application below to interact with the interface and run your own performance tests.
 
 Detona Ralph: [https://detona-ralph-two.vercel.app/](https://detona-ralph-two.vercel.app/)
 
 ### Desktop
 
-https://github.com/Epiled/detona-ralph/assets/55258483/251b9056-57d8-417f-9de1-d43a6afd5816
+[desktop.webm]https://github.com/Epiled/detona-ralph/assets/55258483/251b9056-57d8-417f-9de1-d43a6afd5816
 
 ### Mobile
 
